@@ -1,2 +1,2 @@
 # laravel
-web development using the php frame 
+使用laravel+vue前后端分离开发
