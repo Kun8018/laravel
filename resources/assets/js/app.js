@@ -16,12 +16,17 @@ window.Vue = require('vue');
  */
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
+import ant from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css';
+import router from './router/index.js'
+import axios from 'axios';
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-import example from "./components/ExampleComponent.vue";
+Vue.use(ElementUI);
+Vue.use(ant)
+Vue.prototype.$axios = axios
+axios.defaults.baseURL = 'https://php.com';
 
 const app = new Vue({
     el: '#app',
-    render: h=>h(example)
+    router
 });
